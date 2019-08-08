@@ -1,6 +1,10 @@
 provider "aws" {
   # Change your default region here
   region = "eu-central-1"
+
+  # Uncomment and insert credential values from AWS
+  #access_key = "<access key of the aws account>"
+  #secret_key = "<secret key of the aws account>"
 }
 
 # Used to determine your public IP for forwarding rules
