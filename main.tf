@@ -24,8 +24,8 @@ module "dcos" {
   ssh_public_key_file = "~/.ssh/id_rsa_aws_demo.pub"
   admin_ips           = ["${data.http.whatismyip.body}/32"]
 
-  num_masters        = 1
-  num_private_agents = 2
+  num_masters        = 3
+  num_private_agents = 4
   num_public_agents  = 1
 
   dcos_version = "1.13.3"
@@ -39,8 +39,11 @@ module "dcos" {
 
   dcos_instance_os             = "centos_7.5"
   bootstrap_instance_type      = "t2.medium"
+  # Master t2.medium seems to have not enough memory, the mesos master just dies
+  # every now and then during Cassandra installation
   masters_instance_type        = "t2.medium"
-  private_agents_instance_type = "t2.medium"
+  # Private slaves require more memory for Cassandra
+  private_agents_instance_type = "t2.large"
   public_agents_instance_type  = "t2.medium"
 }
 
