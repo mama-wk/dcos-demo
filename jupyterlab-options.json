@@ -1,0 +1,19 @@
+{
+  "service": {
+    "cpus": 1,
+    "mem": 4096
+  },
+  "networking": {
+    "external_access": {
+      "enabled": true,
+      "external_public_agent_hostname": "ext-wk-dcos-demo-aa2bb746ce3c679e.elb.eu-central-1.amazonaws.com"
+    }
+  },
+  "spark": {
+    "spark_driver_cores": 0.5,
+    "spark_driver_memory": "1g",
+    "spark_conf_executor_cores": "spark.executor.cores=1",
+    "spark_conf_executor_memory": "spark.executor.memory=1g",
+    "spark_conf_jars_packages": "spark.jars.packages=org.apache.spark:spark-streaming-kafka-0-10_2.11:2.4.1,org.apache.kafka:kafka_2.11:0.10.2.1,com.datastax.spark:spark-cassandra-connector_2.11:2.3.3,org.apache.spark:spark-sql_2.11:2.2.2,anguenot:pyspark-cassandra:0.11.0"
+  }
+}

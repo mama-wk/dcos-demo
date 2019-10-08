@@ -1,0 +1,6 @@
+{
+  "marathon-lb": {
+    "cpus": 1,
+    "mem": 1024
+  }
+}

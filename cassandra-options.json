@@ -1,9 +1,12 @@
 {
+  "service": {
+    "data_center": "dc1"
+  },
   "nodes": {
     "cpus": 0.5,
-    "mem": 2048,
+    "mem": 4096,
     "heap": {
-      "size": 1024
+      "size": 2048
     }
   }
 }

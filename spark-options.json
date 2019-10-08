@@ -1,0 +1,5 @@
+{
+  "service": {
+    "docker_user": "99"
+  }
+}
