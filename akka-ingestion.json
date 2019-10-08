@@ -1,0 +1,24 @@
+{
+  "id": "ingestion",
+  "container":{
+    "docker":{
+      "forcePullImage":true,
+      "image":"mamawk/tweet-publisher-to-kafka",
+      "network":"BRIDGE",
+      "privileged":false
+    },
+    "type":"DOCKER"
+  },
+  "cpus":0.5,
+  "mem":2048,
+  "env":{
+    "dcos_kafka_host":"broker.kafka.l4lb.thisdcos.directory",
+    "dcos_kafka_port":"9092",
+    "dcos_kafka_topic":"tweets",
+    "twitter4j.debug":"true",
+    "twitter4j.oauth.accessToken":"<token>>",
+    "twitter4j.oauth.accessTokenSecret":"<secret>>",
+    "twitter4j.oauth.consumerKey":"<key>",
+    "twitter4j.oauth.consumerSecret":"<secret>"
+  }
+}
